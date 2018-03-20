@@ -1,0 +1,13 @@
+function init(self)
+	-- keep track of time in self.t
+	self.t = 0
+end
+
+function update(self, dt)
+	-- add the delta-time (in seconds) since last update to self.t
+	self.t = self.t + dt
+	
+	-- set the "time" constant on the model to a vector4 containing the time.
+	-- all such constants must be of type vector4, which is why we do it like this.
+	model.set_constant("#model", "time", vmath.vector4(self.t, 0, 0, 0))
+end
