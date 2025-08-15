@@ -4,7 +4,7 @@ This is a sample of a shader taken from Shadertoy and ported to Defold. The shad
 
 This document explains how it was setup to run properly in Defold.
 
-Try [building and running](defold://build) the sample to see the shader in action.
+Try [building and running](defold://project.build) the sample to see the shader in action.
 
 ## Rendering
 
