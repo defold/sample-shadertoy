@@ -67,7 +67,7 @@ This sample is intentionally simple. The bootstrap collection (["/main/main.coll
 ![main collection](images/main.jpg)
 
 * A single game object called `star-nest`.
-* A model component using a simple quad mesh (["/main/quad.dae"](defold://open?path=/main/quad.dae)). The mesh is 2x2 units large and extends from `-1` to `1` on both X and Y.
+* A model component using a simple quad mesh that is 2x2 units large and extends from `-1` to `1` on both X and Y.
 * The model is scaled 640 times along X and 360 times along Y so it covers the full 1280x720 display.
 * The model uses the custom material (["/main/star-nest.material"](defold://open?path=/main/star-nest.material)).
 * The shaders use the modern Defold shader pipeline with `#version 140`.
