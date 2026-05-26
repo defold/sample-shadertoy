@@ -43,11 +43,11 @@ Defold uses *materials* to specify all those things. The material set on the sam
 
 * A *Vertex constant* named "view_proj". This is a uniform that is specified to contain an engine supplied constant, an automatically calculated matrix with view and projection that we use to transform the vertices. This constant is passed to the vertex shader as a uniform.
 
-* A *Fragment constant* named "time". This is a user type uniform, meaning that the engine will not automatically set it, instead that is up to us, either to a static value in the material, or dynamically in a script. The constant is passed to the fragment shader as a uniform.
+* A *Fragment constant* named "time". This uses `CONSTANT_TYPE_TIME`, so the engine automatically supplies time data to the fragment shader. `time.x` is the time since engine start and `time.y` is the delta time from the last frame.
 
 * No *Samplers* are set in the material since the fragment shader do not rely on any texture sampling.
 
-* The tag "tile" is set on the material. This means that the quad is rendered in the same pass as tiles and sprites, which is how the default render script works.
+* The tag "tile" is set on the material. This means that the quad is rendered in the same pass as tiles and sprites, which is how the default render script works. If you use a custom render script, include this tag in a render predicate/pass or add a dedicated one for the shader material.
 
 ## The sample setup
 
@@ -56,11 +56,11 @@ This sample is a staightforward setup. The bootstrap collection (["/main/main.co
 ![main collection](images/main.jpg)
 
 * A single game object (called "star-nest").
-* This game object contains a model component and a script.
+* This game object contains a model component.
 * The model component uses a simple quadratic mesh (["/main/quad.dae"](defold://open?path=/main/quad.dae)). The mesh is 2x2 units large (extends from -1 to 1 on the X and Y axis).
 * The model is scaled 640 times along X and 360 times along Y to cover the full 1280x720 resolution.
 * The model component uses the custom material (["/main/star-nest.material"](defold://open?path=/main/star-nest.material)).
-* The script component (["/main/star-nest.script"](defold://open?path=/main/star-nest.script)) sets a fragment constant (time) each frame. This constant is passed to the fragment shader to make it animate.
+* The shaders use the modern Defold shader pipeline with `#version 140`.
 
 That's it!
 

@@ -14,7 +14,7 @@ vertex_constants {
 }
 fragment_constants {
   name: "time"
-  type: CONSTANT_TYPE_USER
+  type: CONSTANT_TYPE_TIME
   value {
     x: 0.0
     y: 0.0
